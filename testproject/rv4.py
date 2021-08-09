@@ -44,7 +44,12 @@ for _ in list_felsorolas:
 print(len(felsorolt_varosok))
 print(felsorolt_varosok)
 
+textarea = driver.find_element_by_id('cites').text
+text1 = textarea.replace('"','')
 
+print(text1)
+texta = text1.split(',')
+print(texta)
 
 
 # ablak lezárása, memória felszabadítása
