@@ -38,7 +38,7 @@ alert_messages = ["", "Kérjük, adja meg a „@” utáni részt is. A(z) „te
                   "Kérjük, töltse ki ezt a mezőt."]
 email_testdata = ['teszt@elek.hu', 'teszt@', '']
 
-# TC1:
+# TC1: Helyes kitöltés esete, gombok, mezők, bevitel, vizsgálat
 input = driver.find_element_by_id('email')
 button = driver.find_element_by_id(('submit'))
 input.send_keys(email_testdata[0])
@@ -48,7 +48,7 @@ ts()
 results = driver.find_elements_by_xpath('//div[@class="validation-error"]')
 assert len(results) == 0
 
-# TC2:
+# TC2: Helytelen, gombok, mezők, bevitel, vizsgálat
 driver.refresh()
 ts()
 input = driver.find_element_by_id('email')
@@ -61,7 +61,7 @@ results = driver.find_elements_by_xpath('//div[@class="validation-error"]')
 if len(results) == 1:
     assert results[0].text == alert_messages[1]
 
-# TC3:
+# TC3: Üres, gombok, mezők, bevitel, vizsgálat
 driver.refresh()
 ts()
 input = driver.find_element_by_id('email')
