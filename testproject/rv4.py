@@ -34,6 +34,7 @@ def ts():
 # TC1:
 # két lista kigyűjtése majd összehasonlítása
 # list(set(temp1) - set(temp2))
+# set(temp1) ^ set(temp2)
 
 list_felsorolas = driver.find_elements_by_tag_name('li')
 felsorolt_varosok = []
@@ -48,6 +49,9 @@ text1 = textarea.replace('"','')
 print(text1)
 texta = text1.split(',')
 print(texta)
+# s = set(texta)
+# varos = [x for x in felsorolt_varosok if x not in s]
+# print(varos)
 varos = list(set(felsorolt_varosok)-set(texta))
 print(type(varos))
 # varos1 = list(varos)
