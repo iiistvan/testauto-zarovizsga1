@@ -32,12 +32,21 @@ def ts():
 
 
 # TC1:
+# két lista kigyűjtése majd összehasonlítása
+# returnMatches(a, b)
+# set(a) & set(b)
+# [i for i, j in zip(a, b) if i == j]
 
-# TC2:
+list_felsorolas = driver.find_elements_by_tag_name('li')
+felsorolt_varosok = []
+for _ in list_felsorolas:
+    felsorolt_varosok.append(_.text)
+print(len(felsorolt_varosok))
+print(felsorolt_varosok)
 
-# TC3:
+
 
 
 # ablak lezárása, memória felszabadítása
-driver.close()
-driver.quit()
+# driver.close()
+# driver.quit()
