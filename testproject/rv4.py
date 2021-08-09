@@ -33,9 +33,7 @@ def ts():
 
 # TC1:
 # két lista kigyűjtése majd összehasonlítása
-# returnMatches(a, b)
-# set(a) & set(b)
-# [i for i, j in zip(a, b) if i == j]
+# list(set(temp1) - set(temp2))
 
 list_felsorolas = driver.find_elements_by_tag_name('li')
 felsorolt_varosok = []
@@ -50,12 +48,12 @@ text1 = textarea.replace('"','')
 print(text1)
 texta = text1.split(',')
 print(texta)
-varos = (set(felsorolt_varosok) & set(texta))
+varos = list(set(felsorolt_varosok)-set(texta))
 print(type(varos))
-varos1 = list(varos)
-print(varos1)
-driver.find_element_by_id('missingCity').send_keys(varos1[0])
-driver.find_element_by_id('submit').click
+# varos1 = list(varos)
+print(varos)
+# driver.find_element_by_id('missingCity').send_keys(varos1[0])
+# driver.find_element_by_id('submit').click
 
 # ablak lezárása, memória felszabadítása
 # driver.close()
